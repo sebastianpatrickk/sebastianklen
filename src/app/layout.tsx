@@ -39,7 +39,7 @@ export default function RootLayout({
       >
         <div className="flex min-h-screen flex-col justify-between bg-background p-6 pt-0 text-text md:p-8">
           <Header />
-          <div className="mx-auto w-full max-w-screen-md">{children}</div>
+          <div className="mx-auto w-full max-w-(--breakpoint-md)">{children}</div>
           <Footer />
         </div>
       </body>
