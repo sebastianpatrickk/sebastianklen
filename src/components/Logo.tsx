@@ -3,19 +3,31 @@
 import { usePathname } from "next/navigation";
 import { unslugify } from "@/lib/utils";
 import Link from "next/link";
-
-const headerContent = {
-  title: "Sebastian Patrick Klen",
-  subtitle: "Software Engineer",
-};
+import React from "react";
 
 export default function Logo() {
   const pathname = usePathname();
 
-  if (pathname.startsWith("/writing/")) {
-    headerContent.title = unslugify(pathname.replace("/writing/", ""));
-    headerContent.subtitle = "Sebastian Patrick Klen";
-  }
+  const [headerContent, setHeaderContent] = React.useState({
+    title: "Sebastian Patrick Klen",
+    subtitle: "Software Engineer",
+  });
+
+  React.useEffect(() => {
+    if (pathname.startsWith("/writing/")) {
+      setHeaderContent({
+        title: unslugify(pathname.replace("/writing/", "")),
+        subtitle: "Sebastian Patrick Klen",
+      });
+
+      return;
+    }
+
+    setHeaderContent({
+      title: "Sebastian Patrick Klen",
+      subtitle: "Software Engineer",
+    });
+  }, [pathname]);
 
   return (
     <div>

@@ -14,7 +14,7 @@ const links = [
 
 export default function Header() {
   return (
-    <div className="mx-auto mt-8 flex w-full max-w-(--breakpoint-md) items-center justify-between">
+    <div className="mx-auto mt-8 flex w-full max-w-2xl items-center justify-between">
       <Logo />
 
       <div className="flex items-start gap-4">

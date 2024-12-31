@@ -33,13 +33,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} font-mono antialiased`}
-      >
-        <div className="flex min-h-screen flex-col justify-between bg-background p-6 pt-0 text-text md:p-8">
-          <Header />
-          <div className="mx-auto w-full max-w-(--breakpoint-md)">{children}</div>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className="font-mono antialiased">
+        <div className="bg-background text-text flex min-h-screen flex-col justify-between p-6 pt-0 md:p-8">
+          <div>
+            <Header />
+            <div className="mx-auto mt-12 w-full max-w-2xl">{children}</div>
+          </div>
           <Footer />
         </div>
       </body>

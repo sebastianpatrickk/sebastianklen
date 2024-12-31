@@ -20,7 +20,7 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="flex w-full items-center justify-center gap-4">
+    <footer className="mt-12 flex w-full items-center justify-center gap-4">
       {links.map((link) => (
         <Link
           key={link.name}
