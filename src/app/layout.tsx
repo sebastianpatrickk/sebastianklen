@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,7 +16,14 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Sebastian - Software Engineer",
+  metadataBase: new URL("https://sebastianklen.com"),
+  alternates: {
+    canonical: "/",
+  },
+  title: {
+    default: "Sebastian Klen",
+    template: "%s | Sebastian Klen",
+  },
   description: "My personal website",
 };
 
@@ -26,9 +35,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#FAFAFA]`}
+        className={`${geistSans.variable} ${geistMono.variable} font-mono antialiased`}
       >
-        {children}
+        <div className="flex min-h-screen flex-col justify-between bg-background p-6 pt-0 text-text md:p-8">
+          <Header />
+          <div className="mx-auto w-full max-w-screen-md">{children}</div>
+          <Footer />
+        </div>
       </body>
     </html>
   );
