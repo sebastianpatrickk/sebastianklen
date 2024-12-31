@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --text: #171717;
+  --text-muted: #666666;
+
+  --primary: #00254d;
+  --primary-foreground: #0068d6;
+
+  --background: #fff;
+  --foreground: #fafafa;
+}
