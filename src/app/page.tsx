@@ -4,7 +4,10 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex w-full flex-col gap-6">
-      <p>
+      <p
+        className="animate-fade-up"
+        style={{ animationDelay: "0.20s", animationFillMode: "both" }}
+      >
         Hi, I&apos;m Sebastian, full-stack developer who loves building and
         improving things. <br />
         I&apos;m currently working at{" "}
@@ -16,7 +19,10 @@ export default function Home() {
         </Link>
         , but I&apos;m looking for new opportunities.
       </p>
-      <div className="space-y-3">
+      <div
+        className="animate-fade-up space-y-3"
+        style={{ animationDelay: "0.30s", animationFillMode: "both" }}
+      >
         <h1 className="font-medium">Experience</h1>
         <p>
           Exploring the world of technology, diving into new projects and
@@ -24,7 +30,10 @@ export default function Home() {
           like hiking, cycling, and rock climbing.
         </p>
       </div>
-      <div className="space-y-3">
+      <div
+        className="animate-fade-up space-y-3"
+        style={{ animationDelay: "0.40s", animationFillMode: "both" }}
+      >
         <h1 className="font-medium">Projects</h1>
         <Posts />
       </div>

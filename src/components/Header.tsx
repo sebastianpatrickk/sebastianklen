@@ -14,7 +14,10 @@ const links = [
 
 export default function Header() {
   return (
-    <div className="mx-auto mt-8 flex w-full max-w-2xl items-center justify-between">
+    <div
+      className="animate-fade-up mx-auto mt-8 flex w-full max-w-2xl items-center justify-between"
+      style={{ animationDelay: "0.10s", animationFillMode: "both" }}
+    >
       <Logo />
 
       <div className="flex items-start gap-4">
