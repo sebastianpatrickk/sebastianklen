@@ -5,7 +5,9 @@ import { unslugify } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
 
-export default function Logo() {
+import { motion, AnimatePresence } from "motion/react";
+
+const Logo = () => {
   const pathname = usePathname();
 
   const [headerContent, setHeaderContent] = React.useState({
@@ -30,13 +32,25 @@ export default function Logo() {
   }, [pathname]);
 
   return (
-    <div>
-      <h1 className="text-base font-medium capitalize">
-        {headerContent.title}
-      </h1>
-      <Link href="/" className="text-text-muted">
-        {headerContent.subtitle}
-      </Link>
+    <div className="overflow-hidden">
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={headerContent.title}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
+        >
+          <h1 className="text-base font-medium capitalize">
+            {headerContent.title}
+          </h1>
+          <Link href="/" className="text-text-muted">
+            {headerContent.subtitle}
+          </Link>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
-}
+};
+
+export default Logo;
