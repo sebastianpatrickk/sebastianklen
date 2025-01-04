@@ -31,10 +31,11 @@ export default function Home() {
         </p>
       </div>
       <div
-        className="animate-fade-up space-y-3"
+        className="animate-fade-up space-y-2"
         style={{ animationDelay: "0.40s", animationFillMode: "both" }}
       >
         <h1 className="font-medium">Projects</h1>
+
         <Posts />
       </div>
     </div>

@@ -1,5 +1,10 @@
+"use client";
+
+import classNames from "classnames";
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
+import { AnimatePresence, motion } from "motion/react";
+import { useRouter } from "next/navigation";
+import React from "react";
 
 const posts = [
   {
@@ -24,42 +29,61 @@ const posts = [
   },
 ];
 
-export default function Posts() {
-  return (
-    <div className="space-y-2">
-      {posts.map((post, index) => (
-        <Post key={index} {...post} />
-      ))}
-    </div>
-  );
-}
+const transition = {
+  type: "tween",
+  ease: "easeOut",
+  duration: 0.15,
+};
 
-export function Post({
-  title,
-  description,
-  link,
-}: {
-  title: string;
-  description: string;
-  link: string;
-}) {
+export default function Posts() {
+  const router = useRouter();
+
+  const [hoveredPost, setHoveredPost] = React.useState<number | null>(null);
+
   return (
-    <Link
-      href={link}
-      className="group flex w-full items-center justify-between py-1"
+    <motion.div
+      className="flex flex-col gap-2"
+      onHoverEnd={() => setHoveredPost(null)}
     >
-      <div className="space-y-1">
-        <h2>{title}</h2>
-        <p className="text-text-muted">
-          {description.length > 100
-            ? `${description.slice(0, 100)}...`
-            : description}
-        </p>
-      </div>
-      <ArrowUpRight
-        className="text-primary transition-all group-hover:rotate-45"
-        size={16}
-      />
-    </Link>
+      {posts.map((post, i) => (
+        <motion.div
+          key={i}
+          className={classNames(
+            "group relative -mx-3 flex w-full cursor-pointer items-center justify-between p-3",
+            {
+              "text-slate-700": hoveredPost === i,
+            },
+          )}
+          onClick={() => router.push(post.link)}
+          onHoverStart={() => setHoveredPost(i)}
+          onFocus={() => setHoveredPost(i)}
+        >
+          <div className="z-20 space-y-1">
+            <h2>{post.title}</h2>
+            <p className="text-text-muted">{post.description}</p>
+          </div>
+          <ArrowUpRight className="text-text-muted z-20 size-4 shrink-0 transition-all duration-300 group-hover:rotate-45" />
+
+          <AnimatePresence>
+            {i === hoveredPost ? (
+              <motion.div
+                className="bg-ds-gray-100 absolute top-0 right-0 bottom-0 left-0 z-10"
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                }}
+                exit={{
+                  opacity: 0,
+                }}
+                transition={transition}
+                layoutId="hover"
+              />
+            ) : null}
+          </AnimatePresence>
+        </motion.div>
+      ))}
+    </motion.div>
   );
 }
