@@ -63,12 +63,12 @@ export default function Posts({ posts }: { posts: Post[] }) {
             <h2>{post.title}</h2>
             <p className="text-text-muted">{post.description}</p>
           </div>
-          <ArrowUpRight className="text-text-muted z-20 size-4 shrink-0 transition-all duration-300 group-hover:rotate-45" />
+          <ArrowUpRight className="z-20 size-4 shrink-0 text-text-muted transition-all duration-300 group-hover:rotate-45" />
 
           <AnimatePresence>
             {i === hoveredPost ? (
               <motion.div
-                className="bg-ds-gray-100 absolute top-0 right-0 bottom-0 left-0 z-10"
+                className="absolute bottom-0 left-0 right-0 top-0 z-10 bg-ds-gray-100"
                 initial={{
                   opacity: 0,
                 }}
