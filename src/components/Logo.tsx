@@ -32,14 +32,17 @@ const Logo = () => {
   }, [pathname]);
 
   return (
-    <div className="overflow-hidden">
-      <AnimatePresence mode="wait" initial={false}>
+    <div className="relative overflow-hidden py-3">
+      <div className="from-background pointer-events-none absolute top-0 left-0 z-50 h-4 w-full bg-linear-to-b to-transparent" />
+      <div className="from-background absolute bottom-0 left-0 z-50 h-4 w-full bg-linear-to-t to-transparent" />
+      <AnimatePresence initial={false}>
         <motion.div
           key={headerContent.title}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          transition={{ duration: 0.2, ease: "easeInOut" }}
+          initial={{ opacity: 0, y: 48 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -48, position: "absolute" }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+          className="h-12"
         >
           <h1 className="text-base font-medium capitalize">
             {headerContent.title}
