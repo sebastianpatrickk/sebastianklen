@@ -15,13 +15,10 @@ const links = [
 export default function Header() {
   return (
     <div
-      className="animate-fade-up relative mx-auto mt-8 flex w-full max-w-2xl items-center justify-between"
+      className="animate-fade-up relative mx-auto mt-6 flex w-full max-w-2xl items-center justify-between"
       style={{ animationDelay: "0.10s", animationFillMode: "both" }}
     >
-     
-  
-        <Logo />
-
+      <Logo />
 
       <div className="flex items-start gap-4">
         {links.map((link) => (

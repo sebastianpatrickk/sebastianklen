@@ -1,33 +1,34 @@
 "use client";
 
+import { Post } from "@/types";
 import classNames from "classnames";
 import { ArrowUpRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-const posts = [
-  {
-    title: "Task Board",
-    description: "An agile project management tool for teams.",
-    link: "/writing/task-board",
-  },
-  {
-    title: "Learning TypeScript",
-    description: "A comprehensive guide to mastering TypeScript.",
-    link: "/writing/learning-typescript",
-  },
-  {
-    title: "React Best Practices",
-    description: "Tips and tricks for writing clean and efficient React code.",
-    link: "/writing/react-best-practices",
-  },
-  {
-    title: "Next.js Performance",
-    description: "How to optimize your Next.js applications for speed.",
-    link: "/writing/nextjs-performance",
-  },
-];
+// const posts = [
+//   {
+//     title: "Task Board",
+//     description: "An agile project management tool for teams.",
+//     link: "/writing/task-board",
+//   },
+//   {
+//     title: "Learning TypeScript",
+//     description: "A comprehensive guide to mastering TypeScript.",
+//     link: "/writing/learning-typescript",
+//   },
+//   {
+//     title: "React Best Practices",
+//     description: "Tips and tricks for writing clean and efficient React code.",
+//     link: "/writing/react-best-practices",
+//   },
+//   {
+//     title: "Next.js Performance",
+//     description: "How to optimize your Next.js applications for speed.",
+//     link: "/writing/nextjs-performance",
+//   },
+// ];
 
 const transition = {
   type: "tween",
@@ -35,7 +36,7 @@ const transition = {
   duration: 0.15,
 };
 
-export default function Posts() {
+export default function Posts({ posts }: { posts: Post[] }) {
   const router = useRouter();
 
   const [hoveredPost, setHoveredPost] = React.useState<number | null>(null);
@@ -54,7 +55,7 @@ export default function Posts() {
               "text-slate-700": hoveredPost === i,
             },
           )}
-          onClick={() => router.push(post.link)}
+          onClick={() => router.push(`/writing/${post.slug}`)}
           onHoverStart={() => setHoveredPost(i)}
           onFocus={() => setHoveredPost(i)}
         >

@@ -35,7 +35,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body className="font-mono antialiased">
-        <div className="bg-background text-text flex min-h-screen flex-col justify-between p-6 pt-0 md:p-8">
+        <div className="bg-background text-text relative flex min-h-screen flex-col justify-between p-6 pt-0 md:p-8">
+          <div className="from-background pointer-events-none fixed top-0 left-0 z-50 h-6 w-full bg-linear-to-b to-transparent" />
           <div>
             <Header />
             <div className="mx-auto mt-12 w-full max-w-2xl">{children}</div>

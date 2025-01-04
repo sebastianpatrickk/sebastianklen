@@ -1,7 +1,11 @@
 import Posts from "@/components/Posts";
+import { getBlogPosts } from "@/lib/mdx-utils";
+
 import Link from "next/link";
 
 export default function Home() {
+  const posts = getBlogPosts();
+
   return (
     <div className="flex w-full flex-col gap-6">
       <p
@@ -36,7 +40,7 @@ export default function Home() {
       >
         <h1 className="font-medium">Projects</h1>
 
-        <Posts />
+        <Posts posts={posts} />
       </div>
     </div>
   );
