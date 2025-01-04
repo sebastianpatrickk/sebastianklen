@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
 import createMDX from "@next/mdx";
 
-const nextConfig: NextConfig = {
-  ageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
-};
+const nextConfig: NextConfig = {};
 
 const withMDX = createMDX({});
 
