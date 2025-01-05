@@ -10,10 +10,22 @@ import { motion, AnimatePresence } from "motion/react";
 const Logo = () => {
   const pathname = usePathname();
 
-  const [headerContent, setHeaderContent] = React.useState({
-    title: "Sebastian Patrick Klen",
-    subtitle: "Software Engineer",
-  });
+  const getInitialHeaderContent = (pathname: string) => {
+    if (pathname.startsWith("/writing/")) {
+      return {
+        title: unslugify(pathname.replace("/writing/", "")),
+        subtitle: "Sebastian Patrick Klen",
+      };
+    }
+    return {
+      title: "Sebastian Patrick Klen",
+      subtitle: "Software Engineer",
+    };
+  };
+
+  const [headerContent, setHeaderContent] = React.useState(
+    getInitialHeaderContent(pathname),
+  );
 
   React.useEffect(() => {
     if (pathname.startsWith("/writing/")) {
@@ -33,8 +45,8 @@ const Logo = () => {
 
   return (
     <div className="relative overflow-hidden py-3">
-      <div className="from-background pointer-events-none absolute top-0 left-0 z-50 h-4 w-full bg-linear-to-b to-transparent" />
-      <div className="from-background absolute bottom-0 left-0 z-50 h-4 w-full bg-linear-to-t to-transparent" />
+      <div className="bg-linear-to-b pointer-events-none absolute left-0 top-0 z-50 h-4 w-full from-background to-transparent" />
+      <div className="bg-linear-to-t absolute bottom-0 left-0 z-50 h-4 w-full from-background to-transparent" />
       <AnimatePresence initial={false}>
         <motion.div
           key={headerContent.title}
