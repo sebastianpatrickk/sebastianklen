@@ -1,5 +1,6 @@
-import Link from "next/link";
 import React, { ComponentPropsWithoutRef } from "react";
+import Link from "next/link";
+import { MDXRemote } from "next-mdx-remote/rsc";
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 type ParagraphProps = ComponentPropsWithoutRef<"p">;
@@ -10,23 +11,23 @@ type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
 
 const components = {
   h1: (props: HeadingProps) => (
-    <h1 className="fade-in mb-0 pt-12 font-medium" {...props} />
+    <h1 className="fade-in mb-0 font-medium" {...props} />
   ),
   h2: (props: HeadingProps) => (
-    <h2 className="mt-8 mb-3 font-medium text-gray-800" {...props} />
+    <h2 className="mb-3 mt-8 font-medium text-text" {...props} />
   ),
   h3: (props: HeadingProps) => (
-    <h3 className="mt-8 mb-3 font-medium text-gray-800" {...props} />
+    <h3 className="mb-3 mt-8 font-medium text-text" {...props} />
   ),
   h4: (props: HeadingProps) => <h4 className="font-medium" {...props} />,
   p: (props: ParagraphProps) => (
-    <p className="leading-snug text-gray-800" {...props} />
+    <p className="leading-snug text-text-muted" {...props} />
   ),
   ol: (props: ListProps) => (
-    <ol className="list-decimal space-y-2 pl-5 text-gray-800" {...props} />
+    <ol className="list-decimal space-y-2 pl-5 text-text-muted" {...props} />
   ),
   ul: (props: ListProps) => (
-    <ul className="list-disc space-y-1 pl-5 text-gray-800" {...props} />
+    <ul className="list-disc space-y-1 pl-5 text-text-muted" {...props} />
   ),
   li: (props: ListItemProps) => <li className="pl-1" {...props} />,
   em: (props: ComponentPropsWithoutRef<"em">) => (
@@ -36,7 +37,7 @@ const components = {
     <strong className="font-medium" {...props} />
   ),
   a: ({ href, children, ...props }: AnchorProps) => {
-    const className = "text-blue-500 hover:text-blue-700";
+    const className = "text-primary-foreground hover:text-primary";
     if (href?.startsWith("/")) {
       return (
         <Link href={href} className={className} {...props}>
@@ -65,7 +66,7 @@ const components = {
   },
 
   Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
-    <table>
+    <table className="table-auto">
       <thead>
         <tr>
           {data.headers.map((header, index) => (
@@ -86,7 +87,7 @@ const components = {
   ),
   blockquote: (props: BlockquoteProps) => (
     <blockquote
-      className="ml-[0.075em] border-l-3 border-gray-300 pl-4 text-gray-700"
+      className="border-l-3 border-ds-gray-400 ml-[0.075em] pl-4 text-text-muted"
       {...props}
     />
   ),
@@ -98,4 +99,18 @@ declare global {
 
 export function useMDXComponents(): MDXProvidedComponents {
   return components;
+}
+
+interface Props {
+  source: string;
+  components?: Record<string, React.ComponentType<any>>;
+}
+
+export function CustomMDX(props: Props) {
+  return (
+    <MDXRemote
+      {...props}
+      components={{ ...components, ...(props.components || {}) }}
+    />
+  );
 }

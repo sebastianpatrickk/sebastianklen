@@ -34,6 +34,7 @@ export default {
       },
       colors: {
         "ds-gray-100": "var(--ds-gray-100)",
+        "ds-gray-400": "var(--ds-gray-400)",
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "var(--primary)",

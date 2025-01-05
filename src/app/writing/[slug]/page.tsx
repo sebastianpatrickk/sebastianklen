@@ -1,5 +1,6 @@
 import { getBlogPosts } from "@/lib/mdx-utils";
 import { notFound } from "next/navigation";
+import { CustomMDX } from "@/components/Mdx";
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
@@ -22,5 +23,9 @@ export default async function Blog({
     notFound();
   }
 
-  return <div>posts</div>;
+  return (
+    <div>
+      <CustomMDX source={post.content} />
+    </div>
+  );
 }

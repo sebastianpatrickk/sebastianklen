@@ -7,29 +7,6 @@ import { AnimatePresence, motion } from "motion/react";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-// const posts = [
-//   {
-//     title: "Task Board",
-//     description: "An agile project management tool for teams.",
-//     link: "/writing/task-board",
-//   },
-//   {
-//     title: "Learning TypeScript",
-//     description: "A comprehensive guide to mastering TypeScript.",
-//     link: "/writing/learning-typescript",
-//   },
-//   {
-//     title: "React Best Practices",
-//     description: "Tips and tricks for writing clean and efficient React code.",
-//     link: "/writing/react-best-practices",
-//   },
-//   {
-//     title: "Next.js Performance",
-//     description: "How to optimize your Next.js applications for speed.",
-//     link: "/writing/nextjs-performance",
-//   },
-// ];
-
 const transition = {
   type: "tween",
   ease: "easeOut",
