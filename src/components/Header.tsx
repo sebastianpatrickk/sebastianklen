@@ -14,10 +14,7 @@ const links = [
 
 export default function Header() {
   return (
-    <div
-      className="animate-fade-up relative mx-auto mt-6 flex w-full max-w-2xl items-center justify-between"
-      style={{ animationDelay: "0.10s", animationFillMode: "both" }}
-    >
+    <div className="relative mx-auto mt-6 flex w-full max-w-2xl items-center justify-between">
       <Logo />
 
       <div className="flex items-start gap-4">
@@ -25,7 +22,7 @@ export default function Header() {
           <Link
             key={link.name}
             href={link.url}
-            className="active:text-primary hidden hover:underline md:inline-block"
+            className="hidden hover:underline active:text-primary md:inline-block"
           >
             {link.name}
           </Link>
