@@ -28,10 +28,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={` ${inter.variable}`}>
+    <html lang="en" className={`${inter.variable}`}>
       <body className="font-sans antialiased">
         <div className="relative flex min-h-screen flex-col justify-between bg-background p-6 pt-0 text-text md:p-8">
-          <div className="bg-fade-to-transparent pointer-events-none fixed left-0 top-0 z-50 h-14 w-full" />
+          <div className="pointer-events-none fixed left-0 top-0 z-50 h-14 w-full bg-fade-to-transparent" />
           <div>
             <Header />
             <div className="mx-auto mt-6 w-full max-w-screen-sm text-sm">

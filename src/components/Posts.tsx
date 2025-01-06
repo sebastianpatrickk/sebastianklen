@@ -1,7 +1,6 @@
 "use client";
 
 import { Post } from "@/types";
-import classNames from "classnames";
 import { ArrowUpRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useRouter } from "next/navigation";
@@ -26,12 +25,7 @@ export default function Posts({ posts }: { posts: Post[] }) {
       {posts.map((post, i) => (
         <motion.div
           key={i}
-          className={classNames(
-            "group relative -mx-3 flex w-full cursor-pointer items-center justify-between p-3",
-            {
-              "text-slate-700": hoveredPost === i,
-            },
-          )}
+          className="group relative flex w-full cursor-pointer items-center justify-between py-3"
           onClick={() => router.push(`/writing/${post.slug}`)}
           onHoverStart={() => setHoveredPost(i)}
           onFocus={() => setHoveredPost(i)}
@@ -45,7 +39,7 @@ export default function Posts({ posts }: { posts: Post[] }) {
           <AnimatePresence>
             {i === hoveredPost ? (
               <motion.div
-                className="absolute bottom-0 left-0 right-0 top-0 z-10 bg-ds-gray-100"
+                className="absolute -left-3 -right-3 bottom-0 top-0 z-10 bg-ds-gray-100"
                 initial={{
                   opacity: 0,
                 }}

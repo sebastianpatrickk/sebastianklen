@@ -1,22 +1,20 @@
 import Posts from "@/components/Posts";
+import { Link } from "@/components/ui/Link";
 import { getBlogPosts } from "@/lib/mdx-utils";
-
-import Link from "next/link";
+import { MoveUpRight } from "lucide-react";
 
 export default function Home() {
   const posts = getBlogPosts();
 
   return (
-    <div className="flex w-full flex-col gap-6">
+    <div className="gap-4.5 flex w-full flex-col text-sm font-medium">
       <p>
         Hi, I&apos;m Sebastian, full-stack developer who loves building and
         improving things. <br />
         I&apos;m currently working at{" "}
-        <Link
-          href="https://www.taskgrip.com/en"
-          className="text-primary-foreground hover:text-primary"
-        >
+        <Link href="https://www.taskgrip.com/en" target="_blank">
           TaskGrip
+          <MoveUpRight className="size-4 text-text-muted" />
         </Link>
         , but I&apos;m looking for new opportunities.
       </p>
