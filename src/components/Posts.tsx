@@ -19,7 +19,7 @@ export default function Posts({ posts }: { posts: Post[] }) {
 
   return (
     <motion.div
-      className="flex flex-col gap-2"
+      className="flex flex-col"
       onHoverEnd={() => setHoveredPost(null)}
     >
       {posts.map((post, i) => (

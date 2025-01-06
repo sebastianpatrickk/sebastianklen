@@ -26,7 +26,7 @@ export default function Footer() {
           key={link.name}
           href={link.url}
           target={link.target}
-          className="hover:text-primary-foreground text-text-muted transition-colors"
+          className="text-text-muted transition-colors hover:text-ds-blue-700"
         >
           {link.name}
         </Link>

@@ -22,7 +22,7 @@ export default function Header() {
           <Link
             key={link.name}
             href={link.url}
-            className="hidden hover:underline active:text-primary md:inline-block"
+            className="hidden font-medium text-text-muted transition-colors hover:text-ds-blue-700 md:inline-block"
           >
             {link.name}
           </Link>

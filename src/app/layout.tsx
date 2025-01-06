@@ -34,7 +34,7 @@ export default function RootLayout({
           <div className="pointer-events-none fixed left-0 top-0 z-50 h-14 w-full bg-fade-to-transparent" />
           <div>
             <Header />
-            <div className="mx-auto mt-6 w-full max-w-screen-sm text-sm">
+            <div className="mx-auto w-full max-w-screen-sm text-sm">
               {children}
             </div>
           </div>

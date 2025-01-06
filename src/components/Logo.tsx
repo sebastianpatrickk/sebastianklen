@@ -45,8 +45,8 @@ const Logo = () => {
 
   return (
     <div className="relative overflow-hidden py-3 text-sm font-medium">
-      <div className="bg-fade-to-transparent pointer-events-none absolute left-0 top-0 z-50 h-4 w-full" />
-      <div className="bg-fade-to-transparent pointer-events-none absolute bottom-0 left-0 z-50 h-4 w-full rotate-180" />
+      <div className="pointer-events-none absolute left-0 top-0 z-50 h-4 w-full bg-fade-to-transparent" />
+      <div className="pointer-events-none absolute bottom-0 left-0 z-50 h-4 w-full rotate-180 bg-fade-to-transparent" />
       <AnimatePresence initial={false}>
         <motion.div
           key={headerContent.title}

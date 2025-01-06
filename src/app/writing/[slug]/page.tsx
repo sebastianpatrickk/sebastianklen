@@ -66,7 +66,7 @@ export default async function Blog({
   }
 
   return (
-    <div>
+    <div className="mt-2">
       <CustomMDX source={post.content} />
     </div>
   );
