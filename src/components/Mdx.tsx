@@ -1,6 +1,8 @@
 import React, { ComponentPropsWithoutRef } from "react";
-import Link from "next/link";
+import { Link } from "@/components/ui/Link";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import { MoveUpRight } from "lucide-react";
+import { highlight } from "sugar-high";
 
 type HeadingProps = ComponentPropsWithoutRef<"h1">;
 type ParagraphProps = ComponentPropsWithoutRef<"p">;
@@ -11,23 +13,25 @@ type BlockquoteProps = ComponentPropsWithoutRef<"blockquote">;
 
 const components = {
   h1: (props: HeadingProps) => (
-    <h1 className="fade-in mb-0 font-medium" {...props} />
+    <h1 className="pb-6 pt-16 font-semibold text-text" {...props} />
   ),
   h2: (props: HeadingProps) => (
-    <h2 className="mb-3 mt-8 font-medium text-text" {...props} />
+    <h2 className="pt-6 font-semibold text-text" {...props} />
   ),
-  h3: (props: HeadingProps) => (
-    <h3 className="mb-3 mt-8 font-medium text-text" {...props} />
-  ),
-  h4: (props: HeadingProps) => <h4 className="font-medium" {...props} />,
   p: (props: ParagraphProps) => (
-    <p className="leading-snug text-text-muted" {...props} />
+    <p className="pt-4 font-medium leading-5 text-text" {...props} />
   ),
   ol: (props: ListProps) => (
-    <ol className="list-decimal space-y-2 pl-5 text-text-muted" {...props} />
+    <ol
+      className="list-decimal space-y-2 pl-5 pt-4 font-medium text-text"
+      {...props}
+    />
   ),
   ul: (props: ListProps) => (
-    <ul className="list-disc space-y-1 pl-5 text-text-muted" {...props} />
+    <ul
+      className="list-disc space-y-1 pl-5 pt-4 font-medium text-text"
+      {...props}
+    />
   ),
   li: (props: ListItemProps) => <li className="pl-1" {...props} />,
   em: (props: ComponentPropsWithoutRef<"em">) => (
@@ -36,35 +40,21 @@ const components = {
   strong: (props: ComponentPropsWithoutRef<"strong">) => (
     <strong className="font-medium" {...props} />
   ),
-  a: ({ href, children, ...props }: AnchorProps) => {
-    const className = "text-primary-foreground hover:text-primary";
-    if (href?.startsWith("/")) {
-      return (
-        <Link href={href} className={className} {...props}>
-          {children}
-        </Link>
-      );
-    }
-    if (href?.startsWith("#")) {
-      return (
-        <a href={href} className={className} {...props}>
-          {children}
-        </a>
-      );
+  a: ({ href = "", children }: AnchorProps) => {
+    if (href.startsWith("/")) {
+      return <Link href={href}>{children}</Link>;
     }
     return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={className}
-        {...props}
-      >
+      <Link href={href} target="_blank">
         {children}
-      </a>
+        <MoveUpRight className="size-4 text-text-muted" />
+      </Link>
     );
   },
-
+  code: ({ children, ...props }: ComponentPropsWithoutRef<"code">) => {
+    const codeHTML = highlight(children as string);
+    return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+  },
   Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
     <table className="table-auto">
       <thead>
@@ -87,7 +77,7 @@ const components = {
   ),
   blockquote: (props: BlockquoteProps) => (
     <blockquote
-      className="border-l-3 border-ds-gray-400 ml-[0.075em] pl-4 text-text-muted"
+      className="border-l-3 ml-[0.075em] border-ds-gray-400 pl-4 text-text-muted"
       {...props}
     />
   ),
