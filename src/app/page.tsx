@@ -1,7 +1,7 @@
 import Posts from "@/components/Posts";
 import Projects from "@/components/Projects";
 import { Link } from "@/components/ui/Link";
-import { projects } from "@/lib/constats";
+import { projects } from "@/lib/constants";
 import { getBlogPosts } from "@/lib/mdx-utils";
 import { MoveUpRight } from "lucide-react";
 

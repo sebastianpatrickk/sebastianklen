@@ -5,3 +5,9 @@ export interface Post {
   slug: string;
   content: string;
 }
+
+export interface Project {
+  title: string;
+  description: string;
+  url: string;
+}

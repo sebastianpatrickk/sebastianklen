@@ -1,16 +1,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
-
-const links = [
-  {
-    name: "GitHub",
-    url: "https://github.com/sebastianpatrickk",
-  },
-  {
-    name: "CV",
-    url: "/cv",
-  },
-];
+import { headerLinks } from "@/lib/constants";
 
 export default function Header() {
   return (
@@ -18,11 +8,12 @@ export default function Header() {
       <Logo />
 
       <div className="flex items-start gap-4">
-        {links.map((link) => (
+        {headerLinks.map((link) => (
           <Link
             key={link.name}
             href={link.url}
-            className="hidden font-medium text-text-muted transition-colors hover:text-ds-blue-700 md:inline-block"
+            target={link.target}
+            className="font-medium text-text-muted transition-colors hover:text-ds-blue-700"
           >
             {link.name}
           </Link>
