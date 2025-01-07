@@ -22,7 +22,7 @@ export default function Projects({ projects }: { projects: Project[] }) {
       {projects.map((post, i) => (
         <motion.div
           key={i}
-          className="group relative flex w-full cursor-pointer items-center justify-between py-3"
+          className="group relative flex w-full cursor-pointer items-center justify-between gap-2 py-3"
           onClick={() => window.open(post.url, "_blank")}
           onHoverStart={() => setHoveredPost(i)}
           onFocus={() => setHoveredPost(i)}

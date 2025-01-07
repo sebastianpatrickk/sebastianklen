@@ -10,16 +10,19 @@ export default function Home() {
   return (
     <div className="mt-8 w-full text-sm font-medium">
       <p className="leading-5">
-        Hi, I&apos;m Sebastian, full-stack developer who loves building and
-        improving things. I&apos;m currently working at{" "}
-        <Link href="/work">TaskGrip</Link>, but I&apos;m looking for new
-        opportunities.
+        Hey, I&apos;m Sebastian, a full-stack web engineer at{" "}
+        <Link href="/work">TaskGrip</Link>. I&apos;m passionate about building
+        software that feels fast, smooth and responsive. I like when people feel
+        something through my work.
       </p>
-
       <p className="pt-4 leading-5">
-        Exploring the world of technology, diving into new projects and
-        discovering innovative solutions. Passionate about outdoor activities
-        like hiking, cycling, and rock climbing.
+        Currently studying at a high school in the Czech Republic with a focus
+        on Computer Science. My dream is to study at college in the US.
+      </p>
+      <p className="pt-4 leading-5">
+        I am a person with an open-minded mindset who loves challenges, learning
+        and trying new things. I try to improve a little bit each day and learn
+        from my mistakes.
       </p>
 
       <div className="space-y-3 pt-8">

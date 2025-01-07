@@ -15,35 +15,34 @@ export const projects = [
   {
     title: "Finance Tracker",
     description:
-      "A finance tracker that allows you to track your income and expenses.",
+      "Built a personal expense tracking tool to avoid subscription fees.",
     url: "https://github.com/sebastianpatrickk/finance-tracker",
     target: "_blank",
   },
   {
     title: "Go Log OS",
-    description:
-      "A finance tracker that allows you to track your income and expenses.",
+    description: "A school attendance system combining hardware and software.",
     url: "https://github.com/sebastianpatrickk/finance-tracker",
     target: "_blank",
   },
   {
     title: "Devboards",
     description:
-      "A finance tracker that allows you to track your income and expenses.",
+      " A project management tool for individuals and teams inspired by Trello.",
     url: "https://github.com/sebastianpatrickk/finance-tracker",
     target: "_blank",
   },
   {
     title: "Webinar Forms API Integration",
     description:
-      "A finance tracker that allows you to track your income and expenses.",
+      "Built a custom form builder that boosted business conversions by 10%.",
     url: "https://github.com/sebastianpatrickk/finance-tracker",
     target: "_blank",
   },
   {
     title: "Place Me",
     description:
-      "A finance tracker that allows you to track your income and expenses.",
+      "A social platform with an interactive map for sharing visited places.",
     url: "https://github.com/sebastianpatrickk/finance-tracker",
     target: "_blank",
   },
