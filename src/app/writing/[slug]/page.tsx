@@ -1,5 +1,5 @@
 import { getBlogPosts } from "@/lib/mdx-utils";
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 import { CustomMDX } from "@/components/Mdx";
 
 export async function generateStaticParams() {
@@ -62,7 +62,7 @@ export default async function Blog({
   const post = getBlogPosts().find((post) => post.slug === slug);
 
   if (!post) {
-    notFound();
+    redirect("/");
   }
 
   return (
