@@ -19,6 +19,9 @@ export const metadata: Metadata = {
     template: "%s | Sebastian Klen",
   },
   description: "My personal website",
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
