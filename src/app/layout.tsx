@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -29,16 +28,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable}`}>
-      <body className="font-sans antialiased">
-        <div className="relative flex min-h-screen flex-col justify-between bg-background p-6 pt-0 text-text md:p-8">
-          <div className="pointer-events-none fixed left-0 top-0 z-50 h-14 w-full bg-fade-to-transparent" />
-          <div>
-            <Header />
-            <div className="mx-auto w-full max-w-screen-sm text-sm">
-              {children}
-            </div>
-          </div>
-          <Footer />
+      <body className="relative min-h-screen font-sans antialiased">
+        <div className="pointer-events-none fixed left-0 top-0 z-50 h-8 w-full bg-fade-to-transparent md:h-14" />
+        <div className="mx-auto max-w-screen-sm px-6 pt-8 md:pt-14">
+          <Header />
+          {children}
         </div>
       </body>
     </html>

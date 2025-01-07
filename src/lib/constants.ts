@@ -11,24 +11,6 @@ export const headerLinks = [
   },
 ];
 
-export const footerLinks = [
-  {
-    name: "GitHub",
-    url: "https://github.com/sebastianpatrickk",
-    target: "_blank",
-  },
-  {
-    name: "CV",
-    url: "/cv",
-    target: "",
-  },
-  {
-    name: "Twitter",
-    url: "https://x.com/sbstkl",
-    target: "_blank",
-  },
-];
-
 export const projects = [
   {
     title: "Finance Tracker",
