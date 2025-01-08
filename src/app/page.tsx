@@ -12,8 +12,8 @@ export default function Home() {
       <p className="leading-5">
         Hey, I&apos;m Sebastian, a full-stack web engineer at{" "}
         <Link href="/work">TaskGrip</Link>. I&apos;m passionate about building
-        software that feels fast, smooth and responsive. I like when people feel
-        something through my work.
+        software that&apos;s fast, smooth and responsive. I like when people
+        feel something through my work.
       </p>
       <p className="pt-4 leading-5">
         Currently studying at a high school in the Czech Republic with a focus
