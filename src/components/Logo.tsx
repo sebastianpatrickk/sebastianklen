@@ -5,6 +5,8 @@ import { unslugify } from "@/lib/utils";
 import Link from "next/link";
 import React from "react";
 
+import { motion, AnimatePresence } from "motion/react";
+
 const Logo = () => {
   const pathname = usePathname();
 
@@ -15,14 +17,6 @@ const Logo = () => {
         subtitle: "Sebastian Patrick Klen",
       };
     }
-
-    if (pathname.startsWith("/work")) {
-      return {
-        title: "Work",
-        subtitle: "Sebastian Patrick Klen",
-      };
-    }
-
     return {
       title: "Sebastian Patrick Klen",
       subtitle: "Software Engineer",
@@ -43,15 +37,6 @@ const Logo = () => {
       return;
     }
 
-    if (pathname.startsWith("/work")) {
-      setHeaderContent({
-        title: "Work",
-        subtitle: "Sebastian Patrick Klen",
-      });
-
-      return;
-    }
-
     setHeaderContent({
       title: "Sebastian Patrick Klen",
       subtitle: "Software Engineer",
@@ -59,11 +44,24 @@ const Logo = () => {
   }, [pathname]);
 
   return (
-    <div className="">
-      <h1 className="font-semibold capitalize">{headerContent.title}</h1>
-      <Link href="/" className="font-medium text-text-muted">
-        {headerContent.subtitle}
-      </Link>
+    <div className="relative overflow-hidden py-3 text-sm font-medium">
+      <div className="bg-linear-to-b pointer-events-none absolute left-0 top-0 z-50 h-4 w-full from-background to-transparent" />
+      <div className="bg-linear-to-t absolute bottom-0 left-0 z-50 h-4 w-full from-background to-transparent" />
+      <AnimatePresence initial={false}>
+        <motion.div
+          key={headerContent.title}
+          initial={{ opacity: 0, y: 48 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -48, position: "absolute" }}
+          transition={{ duration: 0.35, ease: "easeOut" }}
+          className="h-12"
+        >
+          <h1 className="capitalize">{headerContent.title}</h1>
+          <Link href="/" className="text-text-muted">
+            {headerContent.subtitle}
+          </Link>
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 };
