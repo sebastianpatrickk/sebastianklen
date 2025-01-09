@@ -21,8 +21,7 @@ export default function Home() {
       </p>
       <p className="pt-4 leading-5">
         I am a person with an open-minded mindset who loves challenges, learning
-        and trying new things. I try to improve a little bit each day and learn
-        from my mistakes.
+        and trying new things.
       </p>
 
       <div className="space-y-3 pt-8">
