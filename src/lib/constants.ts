@@ -35,15 +35,15 @@ export const projects = [
   {
     title: "Webinar Forms API Integration",
     description:
-      "Built a custom form builder that boosted business conversions by 10%.",
-    url: "https://github.com/sebastian-patrick-klen/webinar-forms.git",
+      "Built a custom form that boosted parents business conversions by 10%.",
+    url: "https://github.com/sebastianpatrickk/webinar-forms",
     target: "_blank",
   },
   {
     title: "Place Me",
     description:
       "A social platform with an interactive map for sharing visited places.",
-    url: "https://github.com/sebastian-patrick-klen/placeme-vite.git",
+    url: "https://github.com/sebastianpatrickk/placeme",
     target: "_blank",
   },
 ];
