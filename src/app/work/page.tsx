@@ -13,10 +13,12 @@ export default function Page() {
 
         <div className="">
           <p className="pt-4">
-            <Link href="https://taskgrip.com">TaskGrip</Link> is a modern task
-            management platform that helps teams and individuals organize their
-            work efficiently. As a full-stack engineer, I contribute to both
-            frontend and backend development.
+            <Link href="https://taskgrip.com">TaskGrip</Link> is a modern Czech
+            startup building an employee attendance system for companies. I
+            joined almost a year ago. Initially, I focused on implementing
+            frontend features, but after some time I also started working on
+            full-stack features. Now, I am also working on a mobile app using
+            React Native.
           </p>
           <p className="pt-4">
             I work closely with the product team to implement new features and
