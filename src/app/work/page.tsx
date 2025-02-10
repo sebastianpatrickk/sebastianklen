@@ -7,7 +7,7 @@ export default function Page() {
         <div>
           <h1 className="font-semibold">TaskGrip</h1>
           <p className="text-text-muted">
-            Full-Stack Engineer, May 2024 - Present
+            Software Engineer, May 2024 - Present
           </p>
         </div>
 

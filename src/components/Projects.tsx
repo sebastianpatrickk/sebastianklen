@@ -4,6 +4,7 @@ import React from "react";
 import { Project } from "@/types";
 import { ArrowUpRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import { useRouter } from "next/navigation";
 
 const transition = {
   type: "tween",
@@ -12,6 +13,7 @@ const transition = {
 };
 
 export default function Projects({ projects }: { projects: Project[] }) {
+  const router = useRouter();
   const [hoveredPost, setHoveredPost] = React.useState<number | null>(null);
 
   return (
@@ -23,7 +25,11 @@ export default function Projects({ projects }: { projects: Project[] }) {
         <motion.div
           key={i}
           className="group relative flex w-full cursor-pointer items-center justify-between gap-2 py-3"
-          onClick={() => window.open(post.url, "_blank")}
+          onClick={() =>
+            post.url.startsWith("/")
+              ? router.push(post.url)
+              : window.open(post.url, "_blank")
+          }
           onHoverStart={() => setHoveredPost(i)}
           onFocus={() => setHoveredPost(i)}
         >

@@ -17,6 +17,7 @@ const Logo = () => {
         subtitle: "Sebastian Patrick Klen",
       };
     }
+
     return {
       title: "Sebastian Patrick Klen",
       subtitle: "Software Engineer",
@@ -56,9 +57,9 @@ const Logo = () => {
           transition={{ duration: 0.35, ease: "easeOut" }}
           className="h-12"
         >
-          <h1 className="capitalize">{headerContent.title}</h1>
-          <Link href="/" className="text-text-muted">
-            {headerContent.subtitle}
+          <Link href="/">
+            <h1 className="capitalize">{headerContent.title}</h1>
+            <p className="text-text-muted">{headerContent.subtitle}</p>
           </Link>
         </motion.div>
       </AnimatePresence>

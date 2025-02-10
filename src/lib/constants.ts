@@ -11,6 +11,14 @@ export const headerLinks = [
   },
 ];
 
+export const experience = [
+  {
+    title: "TaskGrip",
+    description: "Software Engineer, May 2024 - Present",
+    url: "/work",
+  },
+];
+
 export const projects = [
   {
     title: "FastThings",
