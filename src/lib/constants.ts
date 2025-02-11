@@ -23,7 +23,7 @@ export const projects = [
   {
     title: "FastThings",
     description:
-      "Built a personal expense tracking tool to avoid subscription fees.",
+      "Blazingly fast, local-first todo app built with amazing new experimental tech.",
     url: "https://github.com/sebastianpatrickk/fast-things",
     target: "_blank",
   },
@@ -36,14 +36,14 @@ export const projects = [
   {
     title: "Devboards",
     description:
-      " A project management tool for individuals and teams inspired by Trello.",
+      "A project management tool for individuals and teams inspired by Trello.",
     url: "https://github.com/sebastianpatrickk/devboards",
     target: "_blank",
   },
   {
-    title: "Webinar Forms API Integration",
+    title: "Webinar Forms",
     description:
-      "Built a custom form that boosted parents business conversions by 10%.",
+      "Built a custom form builder that boosted parents business conversions by 10%.",
     url: "https://github.com/sebastianpatrickk/webinar-forms",
     target: "_blank",
   },
