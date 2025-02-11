@@ -11,9 +11,11 @@ export default function Home() {
     <div className="my-8 w-full text-sm font-medium">
       <p className="leading-5">
         Hey, I{"'"}m Sebastian, a Software Engineer with 1 year experience at{" "}
-        <Link href="/work">TaskGrip</Link>. I{"'"}m passionate about building
-        software that{"'"}s fast, smooth and responsive. I like when people feel
-        something through my work.
+        <Link href="https://www.taskgrip.com/cz" target="_blank">
+          TaskGrip
+        </Link>
+        . I{"'"}m passionate about building software that{"'"}s fast, smooth and
+        responsive. I like when people feel something through my work.
       </p>
 
       <p className="pt-4 leading-5">
